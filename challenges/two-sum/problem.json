@@ -1,0 +1,14 @@
+{
+  "title": "Two Sum",
+  "difficulty": "Easy",
+  "order": 1,
+  "category": "Hash Table",
+  "tags": ["Array", "Hash Table"],
+  "signature": {
+    "method": "twoSum",
+    "params": [{"name": "nums", "type": "int[]"}, {"name": "target", "type": "int"}],
+    "returns": "int[]"
+  },
+  "compare": "validator",
+  "time_limit_ms": 1500
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Binary Tree Level Order Traversal",
+  "difficulty": "Medium",
+  "order": 13,
+  "category": "Tree",
+  "tags": ["Tree", "Binary Tree", "Breadth-First Search"],
+  "signature": {
+    "method": "levelOrder",
+    "params": [{"name": "root", "type": "TreeNode"}],
+    "returns": "list<list<int>>"
+  },
+  "compare": "exact",
+  "time_limit_ms": 1000
+}

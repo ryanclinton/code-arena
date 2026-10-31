@@ -1,0 +1,14 @@
+{
+  "title": "Trapping Rain Water",
+  "difficulty": "Hard",
+  "order": 7,
+  "category": "Two Pointers",
+  "tags": ["Array", "Two Pointers", "Dynamic Programming", "Stack"],
+  "signature": {
+    "method": "trap",
+    "params": [{"name": "height", "type": "int[]"}],
+    "returns": "int"
+  },
+  "compare": "exact",
+  "time_limit_ms": 1500
+}

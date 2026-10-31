@@ -1,0 +1,14 @@
+{
+  "title": "Number of Islands",
+  "difficulty": "Medium",
+  "order": 15,
+  "category": "Graph",
+  "tags": ["Graph", "Matrix", "Depth-First Search", "Breadth-First Search", "Union Find"],
+  "signature": {
+    "method": "numIslands",
+    "params": [{"name": "grid", "type": "char[][]"}],
+    "returns": "int"
+  },
+  "compare": "exact",
+  "time_limit_ms": 1500
+}

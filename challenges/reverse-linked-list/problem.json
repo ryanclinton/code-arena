@@ -1,0 +1,14 @@
+{
+  "title": "Reverse Linked List",
+  "difficulty": "Easy",
+  "order": 9,
+  "category": "Linked List",
+  "tags": ["Linked List", "Recursion"],
+  "signature": {
+    "method": "reverseList",
+    "params": [{"name": "head", "type": "ListNode"}],
+    "returns": "ListNode"
+  },
+  "compare": "exact",
+  "time_limit_ms": 1000
+}

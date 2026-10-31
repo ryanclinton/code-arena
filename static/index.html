@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CodeArena</title>
+  <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/"><span class="brand-mark">{ }</span><span class="brand-text">CodeArena</span></a>
+    <nav class="topnav">
+      <a href="#/" id="nav-problems">Problems</a>
+    </nav>
+    <div class="problem-nav hidden" id="problem-nav">
+      <button class="icon-btn" id="prev-problem" title="Previous problem">‹</button>
+      <span id="problem-nav-title"></span>
+      <button class="icon-btn" id="next-problem" title="Next problem">›</button>
+    </div>
+    <div class="topbar-actions">
+      <div class="run-actions hidden" id="run-actions">
+        <button class="btn btn-secondary" id="run-btn" title="Run sample tests (Ctrl/⌘ + ')">▶ Run</button>
+        <button class="btn btn-primary" id="submit-btn" title="Submit (Ctrl/⌘ + Enter)">Submit</button>
+      </div>
+      <button class="icon-btn" id="theme-toggle" title="Toggle theme">◐</button>
+    </div>
+  </header>
+
+  <!-- Problem list -->
+  <main id="view-list" class="view list-view hidden">
+    <section class="list-header">
+      <div>
+        <h1>Problems</h1>
+        <p class="muted">Practice in any supported language. Run tests on sample cases, then submit against the full hidden suite.</p>
+      </div>
+      <div class="progress-card" id="progress-card"></div>
+    </section>
+    <div class="list-controls">
+      <input id="search" type="search" placeholder="Search problems or tags…">
+      <select id="difficulty-filter">
+        <option value="">All difficulties</option>
+        <option>Easy</option><option>Medium</option><option>Hard</option>
+      </select>
+      <select id="status-filter">
+        <option value="">All statuses</option>
+        <option value="solved">Solved</option>
+        <option value="attempted">Attempted</option>
+        <option value="todo">To do</option>
+      </select>
+      <select id="group-by" title="Group problems">
+        <option value="">No grouping</option>
+        <option value="category">Group by topic</option>
+        <option value="tag">Group by tag</option>
+        <option value="difficulty">Group by difficulty</option>
+      </select>
+    </div>
+    <table class="problem-table">
+      <thead><tr><th class="col-status">Status</th><th>Title</th><th class="col-diff">Difficulty</th><th class="col-tags">Tags</th></tr></thead>
+      <tbody id="problem-rows"></tbody>
+    </table>
+  </main>
+
+  <!-- Problem workspace -->
+  <main id="view-problem" class="view workspace hidden">
+    <section class="panel left-panel" id="left-panel">
+      <div class="tabs" id="left-tabs">
+        <button class="tab active" data-tab="description">Description</button>
+        <button class="tab" data-tab="solution">Solution</button>
+        <button class="tab" data-tab="submissions">Submissions</button>
+        <button class="tab hidden" data-tab="result" id="result-tab">Result</button>
+      </div>
+      <div class="tab-body" data-body="description">
+        <div class="problem-header">
+          <h2 id="problem-title"></h2>
+          <div class="problem-meta"><span class="diff" id="problem-diff"></span><span id="problem-tags"></span><span class="solved-badge hidden" id="solved-badge">✓ Solved</span></div>
+        </div>
+        <article class="markdown" id="problem-description"></article>
+      </div>
+      <div class="tab-body hidden" data-body="solution">
+        <div class="solution-gate" id="solution-gate">
+          <div class="gate-icon">🔒</div>
+          <h3>Stuck?</h3>
+          <p class="muted">Give it a real try first — you'll learn more. When you're ready, reveal the reference solution and explanation.</p>
+          <button class="btn btn-secondary" id="reveal-solution">Show solution</button>
+        </div>
+        <div class="solution-content hidden" id="solution-content">
+          <article class="markdown" id="solution-explanation"></article>
+          <div class="solution-code-head">
+            <div class="seg" id="solution-langs"></div>
+            <button class="btn btn-ghost" id="copy-solution">Copy to editor</button>
+          </div>
+          <pre class="code-block"><code id="solution-code"></code></pre>
+        </div>
+      </div>
+      <div class="tab-body hidden" data-body="submissions">
+        <div id="submissions-list"></div>
+      </div>
+      <div class="tab-body hidden" data-body="result">
+        <div id="submit-result"></div>
+      </div>
+    </section>
+
+    <div class="splitter vertical" id="split-v" title="Drag to resize"></div>
+
+    <section class="right-col" id="right-col">
+      <div class="panel editor-panel" id="editor-panel">
+        <div class="editor-toolbar">
+          <select id="language-select"></select>
+          <span class="muted small" id="save-state"></span>
+          <div class="spacer"></div>
+          <button class="btn btn-ghost" id="reset-code" title="Reset to starter code">↺ Reset</button>
+        </div>
+        <div id="editor"></div>
+      </div>
+
+      <div class="splitter horizontal" id="split-h" title="Drag to resize"></div>
+
+      <div class="panel console-panel" id="console-panel">
+        <div class="tabs">
+          <button class="tab active" data-ctab="testcase">Testcase</button>
+          <button class="tab" data-ctab="testresult">Test Result</button>
+        </div>
+        <div class="console-body" data-cbody="testcase">
+          <div class="case-chips" id="case-chips"></div>
+          <div id="case-editor"></div>
+          <div class="case-footer">
+            <button class="btn btn-ghost small" id="reset-cases">Reset to examples</button>
+            <span class="muted small">Inputs are JSON. Expected output for custom cases comes from the reference solution.</span>
+          </div>
+        </div>
+        <div class="console-body hidden" data-cbody="testresult">
+          <div id="test-result"><p class="muted">Run your code to see results here.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast hidden" id="toast"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

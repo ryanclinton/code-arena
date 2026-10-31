@@ -1,0 +1,14 @@
+{
+  "title": "Group Anagrams",
+  "difficulty": "Medium",
+  "order": 5,
+  "category": "Hash Table",
+  "tags": ["Array", "Hash Table", "String", "Sorting"],
+  "signature": {
+    "method": "groupAnagrams",
+    "params": [{"name": "strs", "type": "string[]"}],
+    "returns": "list<list<string>>"
+  },
+  "compare": "unordered_nested",
+  "time_limit_ms": 1500
+}

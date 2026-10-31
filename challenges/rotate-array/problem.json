@@ -1,0 +1,15 @@
+{
+  "title": "Rotate Array",
+  "difficulty": "Medium",
+  "order": 6,
+  "category": "Array",
+  "tags": ["Array", "Two Pointers", "In-place"],
+  "signature": {
+    "method": "rotate",
+    "params": [{"name": "nums", "type": "int[]"}, {"name": "k", "type": "int"}],
+    "returns": "void",
+    "output_arg": 0
+  },
+  "compare": "exact",
+  "time_limit_ms": 1500
+}

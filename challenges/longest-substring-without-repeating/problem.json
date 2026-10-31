@@ -1,0 +1,14 @@
+{
+  "title": "Longest Substring Without Repeating Characters",
+  "difficulty": "Medium",
+  "order": 3,
+  "category": "Sliding Window",
+  "tags": ["String", "Sliding Window", "Hash Table"],
+  "signature": {
+    "method": "lengthOfLongestSubstring",
+    "params": [{"name": "s", "type": "string"}],
+    "returns": "int"
+  },
+  "compare": "exact",
+  "time_limit_ms": 1000
+}

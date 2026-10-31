@@ -1,0 +1,14 @@
+{
+  "title": "Valid Parentheses",
+  "difficulty": "Easy",
+  "order": 2,
+  "category": "Stack",
+  "tags": ["String", "Stack"],
+  "signature": {
+    "method": "isValid",
+    "params": [{"name": "s", "type": "string"}],
+    "returns": "boolean"
+  },
+  "compare": "exact",
+  "time_limit_ms": 1000
+}

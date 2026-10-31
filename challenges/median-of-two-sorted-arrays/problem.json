@@ -1,0 +1,14 @@
+{
+  "title": "Median of Two Sorted Arrays",
+  "difficulty": "Hard",
+  "order": 8,
+  "category": "Binary Search",
+  "tags": ["Array", "Binary Search", "Divide and Conquer"],
+  "signature": {
+    "method": "findMedianSortedArrays",
+    "params": [{"name": "nums1", "type": "int[]"}, {"name": "nums2", "type": "int[]"}],
+    "returns": "double"
+  },
+  "compare": "exact",
+  "time_limit_ms": 1000
+}

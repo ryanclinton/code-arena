@@ -1,0 +1,14 @@
+{
+  "title": "Merge Two Sorted Lists",
+  "difficulty": "Easy",
+  "order": 10,
+  "category": "Linked List",
+  "tags": ["Linked List", "Recursion"],
+  "signature": {
+    "method": "mergeTwoLists",
+    "params": [{"name": "list1", "type": "ListNode"}, {"name": "list2", "type": "ListNode"}],
+    "returns": "ListNode"
+  },
+  "compare": "exact",
+  "time_limit_ms": 1000
+}

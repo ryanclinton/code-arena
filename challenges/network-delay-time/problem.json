@@ -1,0 +1,14 @@
+{
+  "title": "Network Delay Time",
+  "difficulty": "Medium",
+  "order": 17,
+  "category": "Graph",
+  "tags": ["Graph", "Shortest Path", "Heap (Priority Queue)"],
+  "signature": {
+    "method": "networkDelayTime",
+    "params": [{"name": "times", "type": "int[][]"}, {"name": "n", "type": "int"}, {"name": "k", "type": "int"}],
+    "returns": "int"
+  },
+  "compare": "exact",
+  "time_limit_ms": 2000
+}

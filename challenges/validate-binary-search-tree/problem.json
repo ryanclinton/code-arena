@@ -1,0 +1,14 @@
+{
+  "title": "Validate Binary Search Tree",
+  "difficulty": "Medium",
+  "order": 14,
+  "category": "Tree",
+  "tags": ["Tree", "Binary Search Tree", "Depth-First Search"],
+  "signature": {
+    "method": "isValidBST",
+    "params": [{"name": "root", "type": "TreeNode"}],
+    "returns": "boolean"
+  },
+  "compare": "exact",
+  "time_limit_ms": 1000
+}

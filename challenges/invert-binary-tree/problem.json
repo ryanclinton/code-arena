@@ -1,0 +1,14 @@
+{
+  "title": "Invert Binary Tree",
+  "difficulty": "Easy",
+  "order": 12,
+  "category": "Tree",
+  "tags": ["Tree", "Binary Tree", "Depth-First Search", "Breadth-First Search"],
+  "signature": {
+    "method": "invertTree",
+    "params": [{"name": "root", "type": "TreeNode"}],
+    "returns": "TreeNode"
+  },
+  "compare": "exact",
+  "time_limit_ms": 1000
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Remove Nth Node From End of List",
+  "difficulty": "Medium",
+  "order": 11,
+  "category": "Linked List",
+  "tags": ["Linked List", "Two Pointers"],
+  "signature": {
+    "method": "removeNthFromEnd",
+    "params": [{"name": "head", "type": "ListNode"}, {"name": "n", "type": "int"}],
+    "returns": "ListNode"
+  },
+  "compare": "exact",
+  "time_limit_ms": 1000
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Merge Intervals",
+  "difficulty": "Medium",
+  "order": 4,
+  "category": "Intervals",
+  "tags": ["Array", "Sorting"],
+  "signature": {
+    "method": "merge",
+    "params": [{"name": "intervals", "type": "int[][]"}],
+    "returns": "int[][]"
+  },
+  "compare": "unordered",
+  "time_limit_ms": 1500
+}

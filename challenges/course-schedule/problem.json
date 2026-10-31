@@ -1,0 +1,14 @@
+{
+  "title": "Course Schedule",
+  "difficulty": "Medium",
+  "order": 16,
+  "category": "Graph",
+  "tags": ["Graph", "Topological Sort", "Depth-First Search", "Breadth-First Search"],
+  "signature": {
+    "method": "canFinish",
+    "params": [{"name": "numCourses", "type": "int"}, {"name": "prerequisites", "type": "int[][]"}],
+    "returns": "boolean"
+  },
+  "compare": "exact",
+  "time_limit_ms": 1500
+}
